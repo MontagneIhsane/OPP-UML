@@ -1,41 +1,43 @@
 class Drone {
-    constructor(parametres) {
-        this.id =parametres.id;
-        this.status = "available";
-        this.model = parametres.model;
-        this.battert = parametres.battert;
-        this.sensors = parametres.sensors;
-        this.position = parametres.position;
-    }
+  constructor(parameters) {
+    this.id = parameters.id;
+    this.status = "available";
+    this.model = parameters.model;
+    this.battery = parameters.battery;
+    this.sensors = parameters.sensors;
+    this.position = parameters.position;
+  }
 
-fly() {
+  fly() {
     console.log("flying");
-};
+  }
 
-land() {
+  land() {
     console.log("landing");
-};
+  }
 
-assign_mission(self) {
-    console.log("assigning mission");
-    self.status = "on mission";
-}
+  assign_mission(self) {
+    console.log("assigning mission...");
+    self.status = "on_mission";
+  }
 
-complete_mission(self) {
-    console.log("mission completed");
+  complete_mission(self) {
+    console.log("comple
+console.log("completing mission...");
     self.status = "available";
+  }
 }
 
-}; 
-//////////////////////////////////////////////////////////////////
-//Partie tests
-////////////////////////////////////////////////////////////////                
+///////////////////////////////////////////
+// Partie Tests / Brouillon
+///////////////////////////////////////////
+
 const drone = new Drone({
-    idv : "1",
-    model : "Model A",
-    battert : 100,
-    sensors : ["water", "fire"],
-    position : "1.1.1"
+  id: "1",
+  model: "suzuki",
+  battery: 100,
+  sensors: ["water", "fire"],
+  position: "1,1,1",
 });
 
 console.log(drone);
@@ -47,3 +49,16 @@ console.log();
 drone.assign_mission(drone);
 console.log(drone.status);
 console.log();
+console.log();
+console.log();
+console.l
+Josselin
+11:54
+class DroneNotAvailableException extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "DroneNotAvailableException";
+  }
+}
+
+module.exports = DroneNotAvailableException;
